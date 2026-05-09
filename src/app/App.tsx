@@ -1,4 +1,4 @@
-import {FileText} from 'lucide-react';
+import {Download, FileText} from 'lucide-react';
 import bachKhoaLogo from '../imports/bachkhoa_logo.png';
 import malwareFlow from '../imports/malware_flow/m_flow.png';
 import methodFlow from '../imports/method/method.png';
@@ -12,9 +12,24 @@ import report3 from '../imports/reason/Report_3.png';
 import systemPrompt from '../imports/system_prompt/prompt.png';
 
 export default function App() {
+  const handleExportPdf = () => {
+    window.print();
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#E5E7EB] py-8">
-      <div className="w-[1240px] min-h-[1754px] mx-auto bg-white" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div className="poster-print-shell min-h-screen flex items-center justify-center bg-[#E5E7EB] py-8">
+      <div className="fixed top-4 right-4 z-50 print:hidden">
+        <button
+          type="button"
+          onClick={handleExportPdf}
+          aria-label="Xuất poster dưới dạng PDF"
+          className="inline-flex items-center gap-2 rounded-md bg-[#0B2B61] px-4 py-2 text-sm font-semibold text-white shadow hover:bg-[#17408D] transition-colors"
+        >
+          <Download className="h-4 w-4" />
+          Xuất PDF
+        </button>
+      </div>
+      <div className="poster-print-root w-[1240px] min-h-[1754px] mx-auto bg-white" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
         <header className="bg-[#0B2B61] text-white px-10 py-6 flex items-start gap-6 relative overflow-hidden">
           <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
             <defs>

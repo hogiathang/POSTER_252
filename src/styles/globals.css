@@ -1,0 +1,25 @@
+@media print {
+  @page {
+    size: A1 portrait;
+    margin: 8mm;
+  }
+
+  body {
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .poster-print-shell {
+    min-height: auto;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .poster-print-root {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    box-shadow: none;
+  }
+}
