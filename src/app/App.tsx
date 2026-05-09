@@ -9,7 +9,9 @@ import resultRq2 from '../imports/ket_qua_thuc_nghiem/result_rq_2.png';
 import report1 from '../imports/reason/Report_1.png';
 import report2 from '../imports/reason/Report_2.png';
 import report3 from '../imports/reason/Report_3.png';
+import challenge from '../imports/challenge/challenges.png';
 import systemPrompt from '../imports/system_prompt/prompt.png';
+import requirement from '../imports/requirements/requirements.png';
 
 export default function App() {
   const handleExportPdf = () => {
@@ -55,16 +57,16 @@ export default function App() {
             </div>
             <div className="text-sm opacity-90 mb-3">Khoa Khoa học và Kỹ thuật Máy tính</div>
             <h1 className="text-4xl font-bold leading-tight mb-3">
-              Nghiên cứu ứng dụng mô hình ngôn ngữ lớn trong phát hiện mã độc trên hệ sinh thái npm
+              Ứng dụng mô hình ngôn ngữ lớn trong phát hiện mã độc trên hệ sinh thái npm
             </h1>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <div className="opacity-80 font-semibold">GVHD</div>
+                <div className="opacity-80 font-semibold">Giảng Viên Hướng Dẫn:</div>
                 <div>Ths. Trần Trương Tuấn Phát</div>
                 <div>TS. Vũ Đức Lý</div>
               </div>
               <div>
-                <div className="opacity-80 font-semibold">SVTH</div>
+                <div className="opacity-80 font-semibold">Sinh viên thực hiện:</div>
                 <div>Nguyễn Đăng Khoa — MSSV 2211618</div>
                 <div>Hồ Gia Thắng — MSSV 2213187</div>
                 <div>Phạm Quang Minh — MSSV 2212075</div>
@@ -93,46 +95,67 @@ export default function App() {
             <rect width="100%" height="100%" fill="url(#grid-body)" />
           </svg>
           <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
+            <div className="flex items-center gap-3 mb-4 pb-2 border-b border-[#E5E7EB]">
               <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 1
               </div>
               <h2 className="text-2xl font-bold text-[#0B2B61]">Giới thiệu</h2>
             </div>
-            <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2">
+            <div className="leading-relaxed text-[#1F2937] space-y-3 text-justify">
               <p>
-                Npm là kho thư viện lớn nhất của JavaScript và xuất hiện trong đa số ứng dụng web hiện đại.
+                Hệ sinh thái npm hiện là một trong những nền tảng quản lý thư viện JavaScript lớn nhất thế giới,
+                đóng vai trò quan trọng trong phát triển ứng dụng web hiện đại. Tuy nhiên, sự phát triển nhanh chóng
+                cùng mô hình đóng góp mở đã khiến npm trở thành mục tiêu của nhiều cuộc tấn công chuỗi cung ứng
+                (supply chain attacks).
               </p>
+
               <p>
-                Mã độc có thể bị cài vào thư viện mã nguồn mở để đánh cắp dữ liệu hoặc chiếm quyền hệ thống
-                khi lập trình viên cài đặt.
-              </p>
-              <p>
-                Các thư viện độc hại thường được ngụy trang tinh vi nên khó phát hiện bằng công cụ truyền thống.
-              </p>
-              <p>
-                Đề tài tập trung rút gọn mã nguồn để LLM chỉ phân tích đoạn đáng ngờ, nâng hiệu quả phát hiện.
+                Mô hình ngôn ngữ lớn (Large Language Models – LLMs) mở ra khả năng phân tích ngữ nghĩa mã nguồn
+                và hỗ trợ phát hiện các hành vi bất thường trong mã JavaScript. Nghiên cứu này tập trung khảo sát
+                khả năng ứng dụng LLM trong hỗ trợ phát hiện hành vi độc hại trong các package npm.
               </p>
             </div>
-            <img
-              src={malwareFlow}
-              alt="Vong doi mot cuoc tan cong npm dien hinh"
-              className="mt-3 w-full max-h-[220px] object-contain rounded-md border border-[#E5E7EB]"
-            />
+            <div className="mt-4 flex justify-center">
+              <img
+                src={malwareFlow}
+                alt="Vong doi mot cuoc tan cong npm dien hinh"
+                className="max-w-full max-h-[260px] object-contain"
+              />
+            </div>
           </section>
 
           <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
+            <div className="flex items-center gap-3 mb-4 pb-2 border-b border-[#E5E7EB]">
               <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 2
               </div>
-              <h2 className="text-2xl font-bold text-[#0B2B61]">Yêu cầu / Thách thức</h2>
+              <h2 className="text-2xl font-bold text-[#0B2B61]">Đặc tả yêu cầu / thách thức</h2>
             </div>
-            <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2">
-              <p>Phát hiện mã độc từ mã nguồn npm ở quy mô lớn, nhiều thư viện và phụ thuộc chéo.</p>
-              <p>Giới hạn ngữ cảnh của LLM khi đưa toàn bộ mã nguồn vào phân tích.</p>
-              <p>Hành vi độc hại nằm rải rác trong callback bất đồng bộ, khó truy vết bằng rule tĩnh.</p>
-              <p>Giảm nhiễu từ code lành tính để ưu tiên phần mã rủi ro cao.</p>
+
+            <div className="mb-5">
+              <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full mb-2">
+                Yêu cầu
+              </div>
+              <div className="text-[13px] leading-relaxed text-[#1F2937]">
+                <img
+                  src={requirement}
+                  alt="Cac yeu cau can thiet de phat hien ma doc tren npm"
+                  className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full mb-2">
+                Thách thức
+              </div>
+              <div className="text-[13px] leading-relaxed text-[#1F2937]">
+                <img
+                  src={challenge}
+                  alt="Cac thach thuc khi ap dung LLM de phat hien ma doc tren npm"
+                  className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
+                />
+              </div>
             </div>
           </section>
 
