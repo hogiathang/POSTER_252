@@ -12,6 +12,8 @@ import report3 from '../imports/reason/Report_3.png';
 import systemPrompt from '../imports/system_prompt/prompt.png';
 
 export default function App() {
+  const PRINT_PAGE_SIZE = 'A1 portrait';
+
   const handleExportPdf = () => {
     window.print();
   };
@@ -21,7 +23,7 @@ export default function App() {
       <style>{`
         @media print {
           @page {
-            size: A1 portrait;
+            size: ${PRINT_PAGE_SIZE};
             margin: 8mm;
           }
           body {
