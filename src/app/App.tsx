@@ -15,13 +15,26 @@ export default function App() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#E5E7EB] py-8">
       <div className="w-[1240px] min-h-[1754px] mx-auto bg-white" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-        <header className="bg-[#0B2B61] text-white px-10 py-6 flex items-start gap-6">
+        <header className="bg-[#0B2B61] text-white px-10 py-6 flex items-start gap-6 relative overflow-hidden">
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+            <defs>
+              <pattern id="grid-header" patternUnits="userSpaceOnUse" width="80" height="80">
+                <circle cx="0" cy="0" r="3" fill="white" opacity="0.25" />
+                <circle cx="80" cy="0" r="3" fill="white" opacity="0.25" />
+                <circle cx="0" cy="80" r="3" fill="white" opacity="0.25" />
+                <circle cx="80" cy="80" r="3" fill="white" opacity="0.25" />
+                <line x1="0" y1="0" x2="80" y2="0" stroke="white" strokeWidth="1" opacity="0.15" />
+                <line x1="0" y1="0" x2="0" y2="80" stroke="white" strokeWidth="1" opacity="0.15" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid-header)" />
+          </svg>
           <img
             src={bachKhoaLogo}
             alt="Logo Bách Khoa"
-            className="w-24 h-24 object-contain bg-white rounded p-1"
+            className="w-24 h-24 object-contain bg-white rounded p-1 relative z-10"
           />
-          <div className="flex-1">
+          <div className="flex-1 relative z-10">
             <div className="text-base font-semibold uppercase tracking-wider">
               Trường Đại học Bách Khoa — ĐHQG-HCM
             </div>
@@ -43,19 +56,33 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-2 text-sm">
+          <div className="flex flex-col gap-2 text-sm relative z-10">
             <div className="px-3 py-2 rounded bg-white/15">HK252-DATN-396</div>
             <div className="px-3 py-2 rounded bg-white/15">Nhóm HCMUT_MALLLM</div>
           </div>
         </header>
 
-        <main className="grid grid-cols-2 gap-5 p-8 bg-[#F3F4F6]">
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5">
+        <main className="grid grid-cols-2 gap-5 p-8 bg-[#F3F4F6] relative">
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+            <defs>
+              <pattern id="grid-body" patternUnits="userSpaceOnUse" width="100" height="100">
+                <circle cx="0" cy="0" r="2.5" fill="#0B2B61" opacity="0.18" />
+                <circle cx="100" cy="0" r="2.5" fill="#0B2B61" opacity="0.18" />
+                <circle cx="0" cy="100" r="2.5" fill="#0B2B61" opacity="0.18" />
+                <circle cx="100" cy="100" r="2.5" fill="#0B2B61" opacity="0.18" />
+                <circle cx="50" cy="50" r="1.5" fill="#0B2B61" opacity="0.12" />
+                <line x1="0" y1="0" x2="100" y2="0" stroke="#0B2B61" strokeWidth="0.8" opacity="0.12" />
+                <line x1="0" y1="0" x2="0" y2="100" stroke="#0B2B61" strokeWidth="0.8" opacity="0.12" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid-body)" />
+          </svg>
+          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
             <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#6C4FF2] text-white font-bold text-lg flex items-center justify-center">
+              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 1
               </div>
-              <h2 className="text-2xl font-bold text-[#6C4FF2]">Giới thiệu</h2>
+              <h2 className="text-2xl font-bold text-[#0B2B61]">Giới thiệu</h2>
             </div>
             <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2">
               <p>
@@ -79,12 +106,12 @@ export default function App() {
             />
           </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5">
+          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
             <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#6C4FF2] text-white font-bold text-lg flex items-center justify-center">
+              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 2
               </div>
-              <h2 className="text-2xl font-bold text-[#6C4FF2]">Yêu cầu / Thách thức</h2>
+              <h2 className="text-2xl font-bold text-[#0B2B61]">Yêu cầu / Thách thức</h2>
             </div>
             <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2">
               <p>Phát hiện mã độc từ mã nguồn npm ở quy mô lớn, nhiều thư viện và phụ thuộc chéo.</p>
@@ -92,40 +119,14 @@ export default function App() {
               <p>Hành vi độc hại nằm rải rác trong callback bất đồng bộ, khó truy vết bằng rule tĩnh.</p>
               <p>Giảm nhiễu từ code lành tính để ưu tiên phần mã rủi ro cao.</p>
             </div>
-            <div className="mt-3 grid grid-cols-2 gap-3">
-              <div>
-                <img
-                  src={report1}
-                  alt="Bao cao trich xuat hanh vi nghi van"
-                  className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
-                />
-                <div className="mt-1 text-[11px] text-[#6B7280]">Report 1: Trich xuat hanh vi</div>
-              </div>
-              <div>
-                <img
-                  src={report2}
-                  alt="Bao cao ngan gon ma nguon"
-                  className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
-                />
-                <div className="mt-1 text-[11px] text-[#6B7280]">Report 2: Loc ma nguon</div>
-              </div>
-            </div>
-            <div className="mt-3">
-              <img
-                src={report3}
-                alt="Bao cao tong hop ket qua"
-                className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
-              />
-              <div className="mt-1 text-[11px] text-[#6B7280]">Report 3: Tong hop ket qua</div>
-            </div>
           </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5">
+          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
             <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#6C4FF2] text-white font-bold text-lg flex items-center justify-center">
+              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 3
               </div>
-              <h2 className="text-2xl font-bold text-[#6C4FF2]">Phương pháp nghiên cứu</h2>
+              <h2 className="text-2xl font-bold text-[#0B2B61]">Phương pháp nghiên cứu</h2>
             </div>
             <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2">
               <p>Kết hợp Code Slicing và LLM để chỉ đưa các đoạn mã rủi ro vào phân tích.</p>
@@ -156,12 +157,12 @@ export default function App() {
             />
           </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5">
+          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
             <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#6C4FF2] text-white font-bold text-lg flex items-center justify-center">
+              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 4
               </div>
-              <h2 className="text-2xl font-bold text-[#6C4FF2]">Kiến trúc hệ thống</h2>
+              <h2 className="text-2xl font-bold text-[#0B2B61]">Kiến trúc hệ thống</h2>
             </div>
             <img
               src={taintAnalysis}
@@ -176,12 +177,12 @@ export default function App() {
             </div>
           </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5">
+          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
             <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#6C4FF2] text-white font-bold text-lg flex items-center justify-center">
+              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 5
               </div>
-              <h2 className="text-2xl font-bold text-[#6C4FF2]">Kết quả thực nghiệm</h2>
+              <h2 className="text-2xl font-bold text-[#0B2B61]">Kết quả thực nghiệm</h2>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
@@ -207,12 +208,12 @@ export default function App() {
             </div>
           </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5">
+          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
             <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#6C4FF2] text-white font-bold text-lg flex items-center justify-center">
+              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 6
               </div>
-              <h2 className="text-2xl font-bold text-[#6C4FF2]">Kết luận</h2>
+              <h2 className="text-2xl font-bold text-[#0B2B61]">Kết luận</h2>
             </div>
             <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2">
               <p>Quy trình slicing + LLM giúp tập trung vào đoạn mã rủi ro, giảm nhiễu khi phân tích.</p>
