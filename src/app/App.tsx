@@ -12,38 +12,12 @@ import report3 from '../imports/reason/Report_3.png';
 import systemPrompt from '../imports/system_prompt/prompt.png';
 
 export default function App() {
-  const PRINT_PAGE_SIZE = 'A1 portrait';
-
   const handleExportPdf = () => {
     window.print();
   };
 
   return (
     <div className="poster-print-shell min-h-screen flex items-center justify-center bg-[#E5E7EB] py-8">
-      <style>{`
-        @media print {
-          @page {
-            size: ${PRINT_PAGE_SIZE};
-            margin: 8mm;
-          }
-          body {
-            background: #ffffff !important;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-          }
-          .poster-print-shell {
-            min-height: auto !important;
-            padding: 0 !important;
-            background: #ffffff !important;
-          }
-          .poster-print-root {
-            width: 100% !important;
-            min-height: auto !important;
-            margin: 0 !important;
-            box-shadow: none !important;
-          }
-        }
-      `}</style>
       <div className="fixed top-4 right-4 z-50 print:hidden">
         <button
           type="button"
