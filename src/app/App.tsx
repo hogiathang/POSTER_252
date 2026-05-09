@@ -101,12 +101,11 @@ export default function App() {
               </div>
               <h2 className="text-2xl font-bold text-[#0B2B61]">Giới thiệu</h2>
             </div>
-            <div className="leading-relaxed text-[#1F2937] space-y-3 text-justify">
+            <div className="text-sm leading-relaxed text-[#1F2937] space-y-3 text-justify">
               <p>
                 Hệ sinh thái npm hiện là một trong những nền tảng quản lý thư viện JavaScript lớn nhất thế giới,
                 đóng vai trò quan trọng trong phát triển ứng dụng web hiện đại. Tuy nhiên, sự phát triển nhanh chóng
-                cùng mô hình đóng góp mở đã khiến npm trở thành mục tiêu của nhiều cuộc tấn công chuỗi cung ứng
-                (supply chain attacks).
+                cùng mô hình đóng góp mở đã khiến npm trở thành mục tiêu của nhiều cuộc tấn công bằng mã độc trong chuỗi cung ứng phần mềm (Software Supply Chain Attacks).
               </p>
 
               <p>
