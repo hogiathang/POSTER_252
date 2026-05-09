@@ -5,21 +5,21 @@
   }
 
   body {
-    background: #ffffff !important;
+    background: #ffffff;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
   .poster-print-shell {
-    min-height: auto !important;
-    padding: 0 !important;
-    background: #ffffff !important;
+    min-height: auto;
+    padding: 0;
+    background: #ffffff;
   }
 
   .poster-print-root {
-    width: 100% !important;
-    min-height: auto !important;
-    margin: 0 !important;
-    box-shadow: none !important;
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    box-shadow: none;
   }
 }
