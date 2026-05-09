@@ -1,25 +1,53 @@
 @media print {
-  @page {
-    size: A1 portrait;
-    margin: 8mm;
+  :root {
+    --poster-print-scale: 0.64;
   }
 
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
   body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
     background: #ffffff;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    overflow: hidden;
+  }
+
+  #root {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
   }
 
   .poster-print-shell {
-    min-height: auto;
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    margin: 0;
     padding: 0;
     background: #ffffff;
+    display: block;
+    overflow: hidden;
   }
 
   .poster-print-root {
-    width: 100%;
-    min-height: auto;
+    /* Original poster canvas dimensions (A-series ratio) before print scaling */
+    width: 1240px;
+    min-height: 1754px;
     margin: 0;
+    border: none;
+    outline: none;
     box-shadow: none;
+    /* 0.64 scale fits 1240px poster (328.1mm at 96dpi) to A4 width 210mm */
+    transform: scale(var(--poster-print-scale));
+    transform-origin: top left;
   }
 }
