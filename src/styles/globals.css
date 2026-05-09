@@ -35,12 +35,14 @@
   }
 
   .poster-print-root {
+    /* Original poster canvas dimensions (A-series ratio) before print scaling */
     width: 1240px;
     min-height: 1754px;
     margin: 0;
     border: none;
     outline: none;
     box-shadow: none;
+    /* 0.6355 ≈ 210mm / 330.2mm to fit poster width into one A4 page */
     transform: scale(0.6355);
     transform-origin: top left;
   }
