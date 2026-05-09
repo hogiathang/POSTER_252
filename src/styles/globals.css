@@ -1,4 +1,8 @@
 @media print {
+  :root {
+    --poster-print-scale: 0.64;
+  }
+
   @page {
     size: A4 portrait;
     margin: 0;
@@ -42,8 +46,8 @@
     border: none;
     outline: none;
     box-shadow: none;
-    /* 0.6355 ≈ 210mm / 330.2mm to fit poster width into one A4 page */
-    transform: scale(0.6355);
+    /* 0.64 scale fits 1240px poster (328.1mm at 96dpi) to A4 width 210mm */
+    transform: scale(var(--poster-print-scale));
     transform-origin: top left;
   }
 }
