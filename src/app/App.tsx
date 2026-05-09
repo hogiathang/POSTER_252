@@ -22,6 +22,7 @@ export default function App() {
         <button
           type="button"
           onClick={handleExportPdf}
+          aria-label="Export poster as PDF"
           className="inline-flex items-center gap-2 rounded-md bg-[#0B2B61] px-4 py-2 text-sm font-semibold text-white shadow hover:bg-[#17408D] transition-colors"
         >
           <Download className="h-4 w-4" />
