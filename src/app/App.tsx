@@ -12,6 +12,7 @@ import report3 from '../imports/reason/Report_3.png';
 import challenge from '../imports/challenge/challenges.png';
 import systemPrompt from '../imports/system_prompt/prompt.png';
 import requirement from '../imports/requirements/requirements.png';
+import sample1 from '../imports/samples/sample.png';
 
 export default function App() {
   const handleExportPdf = () => {
@@ -158,59 +159,69 @@ export default function App() {
             </div>
           </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
+          <section className="col-span-2 bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
+            <div className="flex items-center gap-3 mb-4 pb-2 border-b border-[#E5E7EB]">
               <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 3
               </div>
-              <h2 className="text-2xl font-bold text-[#0B2B61]">Phương pháp nghiên cứu</h2>
+              <h2 className="text-2xl font-bold text-[#0B2B61]">Phương pháp</h2>
             </div>
-            <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2">
-              <p>Kết hợp Code Slicing và LLM để chỉ đưa các đoạn mã rủi ro vào phân tích.</p>
-              <p>
-                Taint-Based Slicing cho JavaScript bất đồng bộ trên CPG, tập trung vào
-                <span className="font-semibold"> eval</span>,<span className="font-semibold"> child_process.exec</span>,
-                <span className="font-semibold"> fs.writeFile</span>.
-              </p>
-              <p>Kết quả lát cắt được tổng hợp bằng max-aggregation, phân loại theo ngưỡng 0.8.</p>
-              <p>Thêm bước phân loại nhóm thư viện để hỗ trợ diễn giải rủi ro.</p>
-            </div>
-            <div className="mt-3 grid grid-cols-2 gap-3">
-              <img
-                src={methodFlow}
-                alt="Phuong phap phat hien ma doc"
-                className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
-              />
-              <img
-                src={systemPrompt}
-                alt="Prompt phan tich cho LLM"
-                className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
-              />
-            </div>
-            <img
-              src={categoryFlow}
-              alt="So do phan loai"
-              className="mt-3 w-full max-h-[180px] object-contain rounded-md border border-[#E5E7EB]"
-            />
-          </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
-                4
+            <div className="grid grid-cols-2 gap-5">
+              <div>
+                <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full mb-2">
+                  Phương pháp nghiên cứu
+                </div>
+                <p>
+                  Áp dụng kỹ thuật phân tích mã tĩnh (Static Code Analysis) kết hợp
+                  Taint Analysis nhằm trích xuất Program Slicing từ mã nguồn JavaScript.
+                </p>
+
+                <p>
+                  Xây dựng tập thuộc tính dựa trên các API nhạy cảm và luồng dữ liệu
+                  để hỗ trợ phân tích hành vi độc hại.
+                </p>
+
+                <p>
+                  Sử dụng mô hình ngôn ngữ lớn (LLMs) để phân tích ngữ nghĩa và
+                  nhận diện các hành vi đáng ngờ trong các đoạn mã đã được cắt lát.
+                </p>
+
+                <p>
+                  Kết quả đầu ra bao gồm mức độ rủi ro và giải thích hành vi đáng ngờ
+                  trong mã JavaScript.
+                </p>
+
+                <div className="space-y-3">
+                  <img src={taintAnalysis} alt="So do phan loai" className="w-full object-contain rounded-md" />
+                </div>
+
+                <div className="space-y-3">
+                  <img src={categoryFlow} alt="So do phan loai" className="w-full object-contain rounded-md" />
+                </div>
               </div>
-              <h2 className="text-2xl font-bold text-[#0B2B61]">Kiến trúc hệ thống</h2>
-            </div>
-            <img
-              src={taintAnalysis}
-              alt="So do phan tich taint tren CPG"
-              className="w-full max-h-[280px] object-contain rounded-md border border-[#E5E7EB]"
-            />
-            <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2 mt-3">
-              <p>Pipeline gồm trích xuất CPG → taint analysis → slicing → prompt LLM → phân loại rủi ro.</p>
-              <p>Tầng phân tích tĩnh đảm bảo bao phủ dòng dữ liệu nhạy cảm xuyên qua callback.</p>
-              <p>LLM nhận đầu vào đã rút gọn để tăng tín hiệu, giảm nhiễu và thời gian suy luận.</p>
-              <p>Kết quả được hợp nhất theo thư viện và theo nhóm hành vi.</p>
+
+              <div>
+                <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full mb-2">
+                  Quy trình hoạt động
+                </div>
+                <div className="flex justify-center">
+                  <img
+                    src={methodFlow}
+                    alt="Phuong phap phat hien ma doc"
+                    className="max-w-[400px] w-full object-contain rounded-md"
+                  />
+                </div>
+                
+                Ví dụ mẫu về 1 lát cắt mã độc sau khi đi qua công cụ.
+                <div className="flex justify-center">
+                  <img
+                    src={sample1}
+                    alt="Phuong phap phat hien ma doc"
+                    className="max-w-[400px] w-full object-contain rounded-md"
+                  />
+                </div>
+              </div>
             </div>
           </section>
 
