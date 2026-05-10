@@ -4,8 +4,9 @@ import malwareFlow from '../imports/malware_flow/m_flow.png';
 import methodFlow from '../imports/method/method.png';
 import categoryFlow from '../imports/categories/category.png';
 import taintAnalysis from '../imports/algorithm/taint-base-analysis.png';
-import resultRq1 from '../imports/ket_qua_thuc_nghiem/result_rq_1.png';
-import resultRq2 from '../imports/ket_qua_thuc_nghiem/result_rq_2.png';
+import { ResultRq1Chart } from '../components/charts/ResultRq1Chart';
+import { ResultRq2Chart } from '../components/charts/ResultRq2Chart';
+import { ResultRq3Chart } from '../components/charts/ResultRq3Chart';
 import report1 from '../imports/reason/Report_1.png';
 import report2 from '../imports/reason/Report_2.png';
 import report3 from '../imports/reason/Report_3.png';
@@ -244,49 +245,23 @@ export default function App() {
             </div>
           </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
+          <section className="col-span-2 bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
             <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
               <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 5
               </div>
               <h2 className="text-2xl font-bold text-[#0B2B61]">Kết quả thực nghiệm</h2>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <img
-                  src={resultRq1}
-                  alt="Ket qua RQ1"
-                  className="w-full max-h-[220px] object-contain rounded-md border border-[#E5E7EB]"
-                />
-                <div className="mt-1 text-[11px] text-[#6B7280]">RQ1: Hieu qua phan loai</div>
+            <div className="grid grid-cols-1 gap-3 lg:grid-cols-[0.65fr_1.35fr]">
+              <div className="overflow-hidden rounded-md border border-[#E5E7EB] bg-white px-2">
+                <ResultRq1Chart />
               </div>
-              <div>
-                <img
-                  src={resultRq2}
-                  alt="Ket qua RQ2"
-                  className="w-full max-h-[220px] object-contain rounded-md border border-[#E5E7EB]"
-                />
-                <div className="mt-1 text-[11px] text-[#6B7280]">RQ2: So sanh voi baseline</div>
+              <div className="overflow-hidden rounded-md border border-[#E5E7EB] bg-white px-2">
+                <ResultRq2Chart />
               </div>
-            </div>
-            <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2 mt-3">
-              <p>Biểu đồ cho thấy xu hướng cải thiện khi áp dụng slicing trước khi phân tích bằng LLM.</p>
-              <p>Kết quả nhất quán giữa hai câu hỏi nghiên cứu và giảm nhiễu từ thư viện lành tính.</p>
-            </div>
-          </section>
-
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
-                6
+              <div className="col-span-2 overflow-hidden rounded-md border border-[#E5E7EB] bg-white px-2">
+                <ResultRq3Chart />
               </div>
-              <h2 className="text-2xl font-bold text-[#0B2B61]">Kết luận</h2>
-            </div>
-            <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2">
-              <p>Quy trình slicing + LLM giúp tập trung vào đoạn mã rủi ro, giảm nhiễu khi phân tích.</p>
-              <p>Taint-based slicing trên CPG tăng khả năng bắt luồng dữ liệu nhạy cảm trong JS bất đồng bộ.</p>
-              <p>Phân loại theo ngưỡng hỗ trợ ưu tiên phát hiện hành vi nguy hiểm.</p>
-              <p>Hướng phát triển: mở rộng sang ecosystem khác (PyPI), tối ưu tốc độ phân tích quy mô lớn.</p>
             </div>
           </section>
         </main>
