@@ -175,7 +175,7 @@ export default function App() {
                   Phương pháp nghiên cứu
                 </div>
 
-{/*                <div className="space-y-2 text-justify leading-relaxed">
+                <div className="space-y-2 text-justify leading-relaxed">
                   <p>
                     Áp dụng kỹ thuật phân tích mã tĩnh (Static Code Analysis) kết hợp
                     Taint Analysis nhằm trích xuất Program Slicing từ mã nguồn JavaScript.
@@ -194,7 +194,7 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* Thuật toán Taint-Based Slicing */}
+                {/* Thuật toán Taint-Based Slicing 
                 <figure className="space-y-1">
                   <img
                     src={taintAnalysis}
@@ -227,7 +227,7 @@ export default function App() {
                   />
                 </figure>
 
-                {/* Ví dụ mẫu */}
+                {/* Ví dụ mẫu 
                 <div className="space-y-2 pt-2 border-t border-[#E5E7EB]">
                   <p className="text-sm font-medium text-[#0B2B61]">
                     Ví dụ mẫu về 1 lát cắt mã độc sau khi đi qua công cụ:
@@ -239,7 +239,7 @@ export default function App() {
                       className="max-w-[400px] w-full object-contain rounded-md border border-[#E5E7EB]"
                     />
                   </figure>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
