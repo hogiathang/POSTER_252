@@ -160,6 +160,7 @@ export default function App() {
           </section>
 
           <section className="col-span-2 bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
+            {/* Header */}
             <div className="flex items-center gap-3 mb-4 pb-2 border-b border-[#E5E7EB]">
               <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
                 3
@@ -167,59 +168,77 @@ export default function App() {
               <h2 className="text-2xl font-bold text-[#0B2B61]">Phương pháp</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
-              <div>
-                <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full mb-2">
+            <div className="grid grid-cols-2 gap-6">
+              {/* Cột trái: Phương pháp nghiên cứu */}
+              <div className="space-y-4">
+                <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full">
                   Phương pháp nghiên cứu
                 </div>
-                <p>
-                  Áp dụng kỹ thuật phân tích mã tĩnh (Static Code Analysis) kết hợp
-                  Taint Analysis nhằm trích xuất Program Slicing từ mã nguồn JavaScript.
-                </p>
 
-                <p>
-                  Xây dựng tập thuộc tính dựa trên các API nhạy cảm và luồng dữ liệu
-                  để hỗ trợ phân tích hành vi độc hại.
-                </p>
-
-                <p>
-                  Sử dụng mô hình ngôn ngữ lớn (LLMs) để phân tích ngữ nghĩa và
-                  nhận diện các hành vi đáng ngờ trong các đoạn mã đã được cắt lát.
-                </p>
-
-                <p>
-                  Kết quả đầu ra bao gồm mức độ rủi ro và giải thích hành vi đáng ngờ
-                  trong mã JavaScript.
-                </p>
-
-                <div className="space-y-3">
-                  <img src={taintAnalysis} alt="So do phan loai" className="w-full object-contain rounded-md" />
+{/*                <div className="space-y-2 text-justify leading-relaxed">
+                  <p>
+                    Áp dụng kỹ thuật phân tích mã tĩnh (Static Code Analysis) kết hợp
+                    Taint Analysis nhằm trích xuất Program Slicing từ mã nguồn JavaScript.
+                  </p>
+                  <p>
+                    Xây dựng tập thuộc tính dựa trên các API nhạy cảm và luồng dữ liệu
+                    để hỗ trợ phân tích hành vi độc hại.
+                  </p>
+                  <p>
+                    Sử dụng mô hình ngôn ngữ lớn (LLMs) để phân tích ngữ nghĩa và
+                    nhận diện các hành vi đáng ngờ trong các đoạn mã đã được cắt lát.
+                  </p>
+                  <p>
+                    Kết quả đầu ra bao gồm mức độ rủi ro và giải thích hành vi đáng ngờ
+                    trong mã JavaScript.
+                  </p>
                 </div>
 
-                <div className="space-y-3">
-                  <img src={categoryFlow} alt="So do phan loai" className="w-full object-contain rounded-md" />
-                </div>
+                {/* Thuật toán Taint-Based Slicing */}
+                <figure className="space-y-1">
+                  <img
+                    src={taintAnalysis}
+                    alt="Thuật toán Taint-Based Slicing"
+                    className="w-full object-contain rounded-md border border-[#E5E7EB]"
+                  />
+                </figure>
+
+                {/* Bảng phân loại API nhạy cảm */}
+                <figure className="space-y-1">
+                  <img
+                    src={categoryFlow}
+                    alt="Bảng phân loại các API nhạy cảm và vai trò lây nhiễm"
+                    className="w-full object-contain rounded-md border border-[#E5E7EB]"
+                  />
+                </figure>
               </div>
 
-              <div>
-                <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full mb-2">
+              {/* Cột phải: Quy trình hoạt động */}
+              <div className="space-y-4">
+                <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full">
                   Quy trình hoạt động
                 </div>
-                <div className="flex justify-center">
+
+                <figure className="flex justify-center">
                   <img
                     src={methodFlow}
-                    alt="Phuong phap phat hien ma doc"
+                    alt="Quy trình phát hiện mã độc qua 6 bước"
                     className="max-w-[400px] w-full object-contain rounded-md"
                   />
-                </div>
-                
-                Ví dụ mẫu về 1 lát cắt mã độc sau khi đi qua công cụ.
-                <div className="flex justify-center">
-                  <img
-                    src={sample1}
-                    alt="Phuong phap phat hien ma doc"
-                    className="max-w-[400px] w-full object-contain rounded-md"
-                  />
+                </figure>
+
+                {/* Ví dụ mẫu */}
+                <div className="space-y-2 pt-2 border-t border-[#E5E7EB]">
+                  <p className="text-sm font-medium text-[#0B2B61]">
+                    Ví dụ mẫu về 1 lát cắt mã độc sau khi đi qua công cụ:
+                  </p>
+                  <figure className="flex justify-center">
+                    <img
+                      src={sample1}
+                      alt="Ví dụ lát cắt mã độc"
+                      className="max-w-[400px] w-full object-contain rounded-md border border-[#E5E7EB]"
+                    />
+                  </figure>
                 </div>
               </div>
             </div>
