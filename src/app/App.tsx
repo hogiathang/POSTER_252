@@ -266,7 +266,7 @@ export default function App() {
           </section>
         </main>
 
-        <footer className="border-t border-[#D1D5DB] px-10 py-4 flex items-center justify-between text-xs text-[#6B7280]">
+     {/*   <footer className="border-t border-[#D1D5DB] px-10 py-4 flex items-center justify-between text-xs text-[#6B7280]">
           <div className="flex items-center gap-2">
             <FileText className="w-4 h-4" />
             <span>
@@ -274,7 +274,7 @@ export default function App() {
             </span>
           </div>
           <div>HK252-DATN-396 | Nhóm HCMUT_MALLLM</div>
-        </footer>
+        </footer> */}
       </div>
     </div>
   );
