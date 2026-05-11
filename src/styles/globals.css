@@ -4,39 +4,39 @@
   }
 
   @page {
-    /* Auto height lets the page grow to fit the full poster in a single page */
-    size: 210mm auto;
+    size: A4 portrait;
     margin: 0;
   }
 
   html,
   body {
     width: 210mm;
-    height: auto;
+    height: 297mm;
     margin: 0;
     padding: 0;
     background: #ffffff;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    overflow: visible;
+    overflow: hidden;
   }
 
   #root {
     width: 210mm;
-    height: auto;
+    height: 297mm;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
 
   .poster-print-shell {
     width: 210mm;
-    height: auto;
-    min-height: unset;
+    height: 297mm;
+    min-height: 297mm;
     margin: 0;
     padding: 0;
     background: #ffffff;
     display: block;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .poster-print-root {

@@ -248,7 +248,7 @@ export default function App() {
           <section className="col-span-2 bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
             <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
               <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
-                5
+                4
               </div>
               <h2 className="text-2xl font-bold text-[#0B2B61]">Kết quả thực nghiệm</h2>
             </div>
