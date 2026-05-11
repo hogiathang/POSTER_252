@@ -26,11 +26,11 @@ const data = [
 
 export function ResultRq2Chart() {
     return (
-        <div className="h-[300px] w-full">
+        <div className="h-full w-full">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                     data={data}
-                    margin={{ top: 24, right: 28, left: 0, bottom: 20 }}
+                    margin={{ top: 24, right: 28, left: 0, bottom: 8 }}
                     barCategoryGap="6%"
                     barGap={2}
                 >
@@ -44,16 +44,40 @@ export function ResultRq2Chart() {
                     <Tooltip formatter={(value: number) => `${value.toFixed(2)}%`} />
                     <Legend wrapperStyle={{ paddingTop: 4 }} />
                     <Bar dataKey="GENIE" name="GENIE" fill={COLORS.genie} radius={[4, 4, 0, 0]}>
-                        <LabelList dataKey="GENIE" position="top" offset={8} formatter={(value: number) => `${value.toFixed(2)}%`} style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }} />
+                        <LabelList
+                            dataKey="GENIE"
+                            position="top"
+                            offset={8}
+                            formatter={(value: number) => `${value.toFixed(2)}`}
+                            style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }}
+                        />
                     </Bar>
                     <Bar dataKey="Static Slicing" name="Static Slicing" fill={COLORS.staticSlicing} radius={[4, 4, 0, 0]}>
-                        <LabelList dataKey="Static Slicing" position="top" offset={8} formatter={(value: number) => `${value.toFixed(2)}%`} style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }} />
+                        <LabelList
+                            dataKey="Static Slicing"
+                            position="top"
+                            offset={8}
+                            formatter={(value: number) => `${value.toFixed(2)}`}
+                            style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }}
+                        />
                     </Bar>
                     <Bar dataKey="Taint Slicing" name="Taint Slicing" fill={COLORS.taintSlicing} radius={[4, 4, 0, 0]}>
-                        <LabelList dataKey="Taint Slicing" position="top" offset={8} formatter={(value: number) => `${value.toFixed(2)}%`} style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }} />
+                        <LabelList
+                            dataKey="Taint Slicing"
+                            position="top"
+                            offset={8}
+                            formatter={(value: number) => `${value.toFixed(2)}`}
+                            style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }}
+                        />
                     </Bar>
                     <Bar dataKey="Baseline Model" name="Baseline Model" fill={COLORS.baselineModel} radius={[4, 4, 0, 0]}>
-                        <LabelList dataKey="Baseline Model" position="top" offset={8} formatter={(value: number) => `${value.toFixed(2)}%`} style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }} />
+                        <LabelList
+                            dataKey="Baseline Model"
+                            position="top"
+                            offset={8}
+                            formatter={(value: number) => `${value.toFixed(2)}`}
+                            style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }}
+                        />
                     </Bar>
                 </BarChart>
             </ResponsiveContainer>

@@ -25,11 +25,11 @@ const data = [
 
 export function ResultRq3Chart() {
     return (
-        <div className="h-[320px] w-full">
+        <div className="h-full w-full">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                     data={data}
-                    margin={{ top: 24, right: 24, left: 0, bottom: 20 }}
+                    margin={{ top: 24, right: 24, left: 0, bottom: 8 }}
                     barCategoryGap="10%"
                     barGap={3}
                 >
@@ -43,13 +43,31 @@ export function ResultRq3Chart() {
                     <Tooltip formatter={(value: number) => `${value.toFixed(2)}%`} />
                     <Legend wrapperStyle={{ paddingTop: 4 }} />
                     <Bar dataKey="Mistral-7B" name="Mistral-7B" fill={COLORS.mistral} radius={[4, 4, 0, 0]}>
-                        <LabelList dataKey="Mistral-7B" position="top" offset={8} formatter={(value: number) => `${value.toFixed(2)}%`} style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }} />
+                        <LabelList
+                            dataKey="Mistral-7B"
+                            position="top"
+                            offset={8}
+                            formatter={(value: number) => `${value.toFixed(2)}`}
+                            style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }}
+                        />
                     </Bar>
                     <Bar dataKey="CodeLlama-7B" name="CodeLlama-7B" fill={COLORS.codellama} radius={[4, 4, 0, 0]}>
-                        <LabelList dataKey="CodeLlama-7B" position="top" offset={8} formatter={(value: number) => `${value.toFixed(2)}%`} style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }} />
+                        <LabelList
+                            dataKey="CodeLlama-7B"
+                            position="top"
+                            offset={8}
+                            formatter={(value: number) => `${value.toFixed(2)}`}
+                            style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }}
+                        />
                     </Bar>
                     <Bar dataKey="DeepSeek-Coder-6.7B" name="DeepSeek-Coder-6.7B" fill={COLORS.deepseek} radius={[4, 4, 0, 0]}>
-                        <LabelList dataKey="DeepSeek-Coder-6.7B" position="top" offset={8} formatter={(value: number) => `${value.toFixed(2)}%`} style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }} />
+                        <LabelList
+                            dataKey="DeepSeek-Coder-6.7B"
+                            position="top"
+                            offset={8}
+                            formatter={(value: number) => `${value.toFixed(2)}`}
+                            style={{ fill: '#111827', fontSize: 10, fontWeight: 600 }}
+                        />
                     </Bar>
                 </BarChart>
             </ResponsiveContainer>

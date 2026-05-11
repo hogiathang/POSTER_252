@@ -1,4 +1,4 @@
-import {Download, FileText} from 'lucide-react';
+﻿import { Download, FileText } from 'lucide-react';
 import bachKhoaLogo from '../imports/bachkhoa_logo.png';
 import malwareFlow from '../imports/malware_flow/m_flow.png';
 import methodFlow from '../imports/method/method.png';
@@ -81,7 +81,8 @@ export default function App() {
           </div>
         </header>
 
-        <main className="grid grid-cols-2 gap-5 p-8 bg-[#F3F4F6] relative">
+        {/* MAIN: 2 cột độc lập, mỗi cột tự xếp section liên tiếp */}
+        <main className="grid grid-cols-2 gap-4 p-6 bg-[#F3F4F6] relative">
           <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
             <defs>
               <pattern id="grid-body" patternUnits="userSpaceOnUse" width="100" height="100">
@@ -96,177 +97,217 @@ export default function App() {
             </defs>
             <rect width="100%" height="100%" fill="url(#grid-body)" />
           </svg>
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            <div className="flex items-center gap-3 mb-4 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
-                1
-              </div>
-              <h2 className="text-2xl font-bold text-[#0B2B61]">Giới thiệu</h2>
-            </div>
-            <div className="text-sm leading-relaxed text-[#1F2937] space-y-3 text-justify">
-              <p>
-                Hệ sinh thái npm hiện là một trong những nền tảng quản lý thư viện JavaScript lớn nhất thế giới,
-                đóng vai trò quan trọng trong phát triển ứng dụng web hiện đại. Tuy nhiên, sự phát triển nhanh chóng
-                cùng mô hình đóng góp mở đã khiến npm trở thành mục tiêu của nhiều cuộc tấn công bằng mã độc trong chuỗi cung ứng phần mềm (Software Supply Chain Attacks).
-              </p>
 
-              <p>
-                Mô hình ngôn ngữ lớn (Large Language Models – LLMs) mở ra khả năng phân tích ngữ nghĩa mã nguồn
-                và hỗ trợ phát hiện các hành vi bất thường trong mã JavaScript. Nghiên cứu này tập trung khảo sát
-                khả năng ứng dụng LLM trong hỗ trợ phát hiện hành vi độc hại trong các package npm.
-              </p>
-            </div>
-            <div className="mt-4 flex justify-center">
-              <img
-                src={malwareFlow}
-                alt="Vong doi mot cuoc tan cong npm dien hinh"
-                className="max-w-full max-h-[260px] object-contain"
-              />
-            </div>
-          </section>
+          {/* CỘT TRÁI: Giới thiệu → Phương pháp */}
+          <div className="flex flex-col gap-4 relative z-10">
+            {/* SECTION 1 - GIỚI THIỆU */}
+            <section className="bg-white border border-[#E5E7EB] rounded-md p-4">
+              <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
+                <div className="w-9 h-9 rounded bg-[#0B2B61] text-white font-bold text-base flex items-center justify-center">
+                  1
+                </div>
+                <h2 className="text-xl font-bold text-[#0B2B61]">Giới thiệu</h2>
+              </div>
+              <div className="text-[13px] leading-relaxed text-[#1F2937] space-y-2 text-justify">
+                <p>
+                  Hệ sinh thái npm hiện là một trong những nền tảng quản lý thư viện JavaScript lớn nhất thế giới,
+                  đóng vai trò quan trọng trong phát triển ứng dụng web hiện đại. Tuy nhiên, sự phát triển nhanh chóng
+                  cùng mô hình đóng góp mở đã khiến npm trở thành mục tiêu của nhiều cuộc tấn công bằng mã độc trong chuỗi cung ứng phần mềm (Software Supply Chain Attacks).
+                </p>
+                <p>
+                  Mô hình ngôn ngữ lớn (Large Language Models – LLMs) mở ra khả năng phân tích ngữ nghĩa mã nguồn
+                  và hỗ trợ phát hiện các hành vi bất thường trong mã JavaScript. Nghiên cứu này tập trung khảo sát
+                  khả năng ứng dụng LLM trong hỗ trợ phát hiện hành vi độc hại trong các package npm.
+                </p>
+              </div>
+              <div className="mt-3 bg-gradient-to-br from-[#F0F4FA] to-[#E8EEF7] border-l-4 border-[#0B2B61] rounded-md p-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-4 h-4 text-[#0B2B61]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <h3 className="text-sm font-bold text-[#0B2B61]">Đóng góp chính của nghiên cứu</h3>
+                </div>
+                <ul className="space-y-1 text-[12.5px] text-[#1F2937]">
+                  <li className="flex gap-2">
+                    <span className="text-[#0B2B61] font-bold flex-shrink-0">▸</span>
+                    <span><strong className="text-[#0B2B61]">Đề xuất quy trình cắt lát mã nguồn chuyên biệt cho JavaScript</strong></span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#0B2B61] font-bold flex-shrink-0">▸</span>
+                    <span><strong className="text-[#0B2B61]">Đánh giá thực nghiệm quy mô trên các dòng LLM hiện đại</strong></span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#0B2B61] font-bold flex-shrink-0">▸</span>
+                    <span><strong className="text-[#0B2B61]">Khảo sát ảnh hưởng của cấu hình suy luận đến độ tin cậy bảo mật</strong></span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#0B2B61] font-bold flex-shrink-0">▸</span>
+                    <span><strong className="text-[#0B2B61]">Chứng minh tính ưu việt so với các phương pháp truyền thống</strong></span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-[#0B2B61] font-bold flex-shrink-0">▸</span>
+                    <span><strong className="text-[#0B2B61]">Đánh giá chuyên sâu về hiệu quả của kỹ thuật Tinh chỉnh hiệu quả tham số (PEFT)</strong></span>
+                  </li>
+                </ul>
+              </div>
+            </section>
 
-          <section className="bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            <div className="flex items-center gap-3 mb-4 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
-                2
+            {/* SECTION 3 - PHƯƠNG PHÁP (dồn lên cột trái) */}
+            <section className="bg-white border border-[#E5E7EB] rounded-md p-4">
+              <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
+                <div className="w-9 h-9 rounded bg-[#0B2B61] text-white font-bold text-base flex items-center justify-center">
+                  3
+                </div>
+                <h2 className="text-xl font-bold text-[#0B2B61]">Phương pháp</h2>
               </div>
-              <h2 className="text-2xl font-bold text-[#0B2B61]">Đặc tả yêu cầu / thách thức</h2>
-            </div>
 
-            <div className="mb-5">
-              <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full mb-2">
-                Yêu cầu
-              </div>
-              <div className="text-[13px] leading-relaxed text-[#1F2937]">
-                <img
-                  src={requirement}
-                  alt="Cac yeu cau can thiet de phat hien ma doc tren npm"
-                  className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
-                />
-              </div>
-            </div>
-
-            <div>
-              <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full mb-2">
-                Thách thức
-              </div>
-              <div className="text-[13px] leading-relaxed text-[#1F2937]">
-                <img
-                  src={challenge}
-                  alt="Cac thach thuc khi ap dung LLM de phat hien ma doc tren npm"
-                  className="w-full max-h-[200px] object-contain rounded-md border border-[#E5E7EB]"
-                />
-              </div>
-            </div>
-          </section>
-
-          <section className="col-span-2 bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            {/* Header */}
-            <div className="flex items-center gap-3 mb-4 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
-                3
-              </div>
-              <h2 className="text-2xl font-bold text-[#0B2B61]">Phương pháp</h2>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              {/* Cột trái: Phương pháp nghiên cứu */}
-              <div className="space-y-4">
-                <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full">
+              <div className="flex flex-col gap-3">
+                <div className="inline-block self-start bg-[#0B2B61] text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Phương pháp nghiên cứu
                 </div>
 
-                <div className="space-y-2 text-justify leading-relaxed">
-                  <p>
-                    Áp dụng kỹ thuật phân tích mã tĩnh (Static Code Analysis) kết hợp
-                    Taint Analysis nhằm trích xuất Program Slicing từ mã nguồn JavaScript.
-                  </p>
-                  <p>
-                    Xây dựng tập thuộc tính dựa trên các API nhạy cảm và luồng dữ liệu
-                    để hỗ trợ phân tích hành vi độc hại.
-                  </p>
-                  <p>
-                    Sử dụng mô hình ngôn ngữ lớn (LLMs) để phân tích ngữ nghĩa và
-                    nhận diện các hành vi đáng ngờ trong các đoạn mã đã được cắt lát.
-                  </p>
-                  <p>
-                    Kết quả đầu ra bao gồm mức độ rủi ro và giải thích hành vi đáng ngờ
-                    trong mã JavaScript.
-                  </p>
-                </div>
+                <ul className="text-[12.5px] leading-snug text-[#1F2937] space-y-1.5 list-disc pl-5 text-justify">
+                  <li>
+                    Áp dụng <strong>phân tích mã tĩnh</strong> kết hợp <strong>Taint Analysis</strong> để trích xuất Program Slicing từ mã JavaScript.
+                  </li>
+                  <li>
+                    Xây dựng tập thuộc tính dựa trên <strong>API nhạy cảm</strong> và luồng dữ liệu để phân tích hành vi độc hại.
+                  </li>
+                  <li>
+                    Sử dụng <strong>LLMs</strong> phân tích ngữ nghĩa và nhận diện hành vi đáng ngờ trong các lát cắt mã.
+                  </li>
+                  <li>
+                    Đầu ra: <strong>mức độ rủi ro</strong> và giải thích chi tiết hành vi đáng ngờ.
+                  </li>
+                </ul>
 
-                {/* Thuật toán Taint-Based Slicing 
-                <figure className="space-y-1">
-                  <img
-                    src={taintAnalysis}
-                    alt="Thuật toán Taint-Based Slicing"
-                    className="w-full object-contain rounded-md border border-[#E5E7EB]"
-                  />
-                </figure>
-
-                {/* Bảng phân loại API nhạy cảm */}
-                <figure className="space-y-1">
-                  <img
-                    src={categoryFlow}
-                    alt="Bảng phân loại các API nhạy cảm và vai trò lây nhiễm"
-                    className="w-full object-contain rounded-md border border-[#E5E7EB]"
-                  />
-                </figure>
-              </div>
-
-              {/* Cột phải: Quy trình hoạt động */}
-              <div className="space-y-4">
-                <div className="inline-block bg-[#0B2B61] text-white text-sm font-semibold px-3 py-1 rounded-full">
+                <div className="inline-block self-start bg-[#0B2B61] text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Quy trình hoạt động
                 </div>
 
-                <figure className="flex justify-center">
+                <figure className="flex justify-center items-center">
                   <img
                     src={methodFlow}
                     alt="Quy trình phát hiện mã độc qua 6 bước"
-                    className="max-w-[400px] w-full object-contain rounded-md"
+                    className="w-full max-h-[360px] object-contain rounded-md"
                   />
                 </figure>
 
-                {/* Ví dụ mẫu 
-                <div className="space-y-2 pt-2 border-t border-[#E5E7EB]">
-                  <p className="text-sm font-medium text-[#0B2B61]">
-                    Ví dụ mẫu về 1 lát cắt mã độc sau khi đi qua công cụ:
-                  </p>
-                  <figure className="flex justify-center">
-                    <img
-                      src={sample1}
-                      alt="Ví dụ lát cắt mã độc"
-                      className="max-w-[400px] w-full object-contain rounded-md border border-[#E5E7EB]"
-                    />
-                  </figure>
-                </div> */}
-              </div>
-            </div>
-          </section>
+                <div className="inline-block self-start bg-[#0B2B61] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  Phân loại API nhạy cảm
+                </div>
 
-          <section className="col-span-2 bg-white border border-[#E5E7EB] rounded-md p-5 relative z-10">
-            <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
-              <div className="w-10 h-10 rounded bg-[#0B2B61] text-white font-bold text-lg flex items-center justify-center">
-                5
+                <figure>
+                  <img
+                    src={categoryFlow}
+                    alt="Bảng phân loại các API nhạy cảm và vai trò lây nhiễm"
+                    className="w-full max-h-[240px] object-contain rounded-md border border-[#E5E7EB]"
+                  />
+                </figure>
               </div>
-              <h2 className="text-2xl font-bold text-[#0B2B61]">Kết quả thực nghiệm</h2>
-            </div>
-            <div className="grid grid-cols-1 gap-3 lg:grid-cols-[0.65fr_1.35fr]">
-              <div className="overflow-hidden rounded-md border border-[#E5E7EB] bg-white px-2">
-                <ResultRq1Chart />
+            </section>
+          </div>
+
+          {/* CỘT PHẢI: Đặc tả yêu cầu → Kết quả thực nghiệm */}
+          <div className="flex flex-col gap-4 relative z-10">
+            {/* SECTION 2 - YÊU CẦU / THÁCH THỨC */}
+            <section className="bg-white border border-[#E5E7EB] rounded-md p-4">
+              <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
+                <div className="w-9 h-9 rounded bg-[#0B2B61] text-white font-bold text-base flex items-center justify-center">
+                  2
+                </div>
+                <h2 className="text-xl font-bold text-[#0B2B61]">Đặc tả yêu cầu / thách thức</h2>
               </div>
-              <div className="overflow-hidden rounded-md border border-[#E5E7EB] bg-white px-2">
-                <ResultRq2Chart />
+
+              <div className="mb-3">
+                <div className="inline-block bg-[#0B2B61] text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                  Yêu cầu
+                </div>
+                <img
+                  src={requirement}
+                  alt="Cac yeu cau can thiet de phat hien ma doc tren npm"
+                  className="w-full max-h-[180px] object-contain rounded-md border border-[#E5E7EB]"
+                />
               </div>
-              <div className="col-span-2 overflow-hidden rounded-md border border-[#E5E7EB] bg-white px-2">
-                <ResultRq3Chart />
+
+              <div>
+                <div className="inline-block bg-[#0B2B61] text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                  Thách thức
+                </div>
+                <img
+                  src={challenge}
+                  alt="Cac thach thuc khi ap dung LLM de phat hien ma doc tren npm"
+                  className="w-full max-h-[180px] object-contain rounded-md border border-[#E5E7EB]"
+                />
               </div>
-            </div>
-          </section>
+            </section>
+
+            {/* SECTION 4 - KẾT QUẢ THỰC NGHIỆM */}
+            <section className="bg-white border border-[#E5E7EB] rounded-md p-4">
+              <div className="flex items-center gap-3 mb-3 pb-2 border-b border-[#E5E7EB]">
+                <div className="w-9 h-9 rounded bg-[#0B2B61] text-white font-bold text-base flex items-center justify-center">
+                  4
+                </div>
+                <h2 className="text-xl font-bold text-[#0B2B61]">Kết quả thực nghiệm</h2>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                {/* RQ1 */}
+                <div className="flex flex-col rounded-md border border-[#E5E7EB] bg-white overflow-hidden">
+                  <div className="bg-gradient-to-r from-[#0B2B61] to-[#17408D] px-2.5 py-1.5">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white text-[#0B2B61] text-[10px] font-bold flex-shrink-0">
+                        RQ1
+                      </span>
+                      <h3 className="text-[12px] font-semibold text-white leading-tight">
+                        Hiệu quả của kỹ thuật Slicing
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="w-full h-[200px] p-2">
+                    <ResultRq1Chart />
+                  </div>
+                </div>
+
+                {/* RQ2 */}
+                <div className="flex flex-col rounded-md border border-[#E5E7EB] bg-white overflow-hidden">
+                  <div className="bg-gradient-to-r from-[#0B2B61] to-[#17408D] px-2.5 py-1.5">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white text-[#0B2B61] text-[10px] font-bold flex-shrink-0">
+                        RQ2
+                      </span>
+                      <h3 className="text-[12px] font-semibold text-white leading-tight">
+                        So sánh với các phương pháp truyền thống
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="w-full h-[220px] p-2">
+                    <ResultRq2Chart />
+                  </div>
+                </div>
+
+                {/* RQ3 */}
+                <div className="flex flex-col rounded-md border border-[#E5E7EB] bg-white overflow-hidden">
+                  <div className="bg-gradient-to-r from-[#0B2B61] to-[#17408D] px-2.5 py-1.5">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white text-[#0B2B61] text-[10px] font-bold flex-shrink-0">
+                        RQ3
+                      </span>
+                      <h3 className="text-[12px] font-semibold text-white leading-tight">
+                        So sánh giữa các dòng LLM khác nhau
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="w-full h-[220px] p-2">
+                    <ResultRq3Chart />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
         </main>
 
-     {/*   <footer className="border-t border-[#D1D5DB] px-10 py-4 flex items-center justify-between text-xs text-[#6B7280]">
+        {/*   <footer className="border-t border-[#D1D5DB] px-10 py-4 flex items-center justify-between text-xs text-[#6B7280]">
           <div className="flex items-center gap-2">
             <FileText className="w-4 h-4" />
             <span>
